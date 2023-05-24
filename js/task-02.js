@@ -8,9 +8,17 @@ const ingredients = [
 ];
 
 const ingredientsEl = document.querySelector("#ingredients");
-const ingrEl = ingredients.map(() => document.createElement("li"));
-ingrEl.map((el, index) => {
-  el.textContent = ingredients[index];
-  el.classList.add("item");
+const ingredEl = ingredients.map(ingredient => {
+  const listItem = document.createElement("li");
+  listItem.textContent = ingredient;
+  listItem.classList.add("item");
+  return listItem;
 });
-ingredientsEl.append(...ingrEl);
+ingredientsEl.append(...ingredEl);
+
+// const ingrEl = ingredients.map(() => document.createElement("li"));
+// ingrEl.map((el, index) => {
+//   el.textContent = ingredients[index];
+//   el.classList.add("item");
+// });
+// ingredientsEl.append(...ingrEl);
